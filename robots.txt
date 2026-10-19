@@ -1,0 +1,5 @@
+# Crawlers are welcome. Pages carry noindex directives to discourage search-engine indexing.
+User-agent: *
+Allow: /
+
+Sitemap: https://hufsa-stack.github.io/wexmoor-foundation-demo/sitemap.xml
