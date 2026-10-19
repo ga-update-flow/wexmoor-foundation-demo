@@ -34,6 +34,13 @@ const results = [];
 const check = (name, ok, detail = '') => { results.push({ name, ok, detail }); console.log(`${ok ? 'PASS' : 'FAIL'}  ${name}${detail ? '  ' + detail : ''}`); };
 
 const browser = await chromium.launch();
+// Optional: SITE_PASSWORD logs in through a Netlify password gate (e.g. an unclaimed anonymous deploy).
+const _newContext = browser.newContext.bind(browser);
+browser.newContext = async (o) => {
+  const ctx = await _newContext(o);
+  if (process.env.SITE_PASSWORD) await ctx.request.post(BASE + '/', { form: { password: process.env.SITE_PASSWORD } });
+  return ctx;
+};
 try {
   for (const [w, h, label] of [[1440, 900, 'desktop'], [390, 844, 'mobile']]) {
     const ctx = await browser.newContext({ viewport: { width: w, height: h } });
