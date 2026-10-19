@@ -4,7 +4,7 @@ Date: 2026-10-19 · Build: Astro 5.18.2 · Browser: headless Chromium (Playwrigh
 
 ## Automated results
 
-| Check | Local (`dist/`) | Live Netlify deploy |
+| Check | Local (`dist/`) | Live GitHub Pages (hufsa-stack.github.io/wexmoor-foundation-demo) |
 |---|---|---|
 | `npm run check-links`: 44 HTML files, 2,183 internal href/src/action references | 0 broken | n/a |
 | 43 pages × desktop (1440px) and mobile (390px): HTTP 200, `noindex, nofollow` meta, an `<h1>`, no JS errors, no horizontal scroll | PASS | PASS |
@@ -16,9 +16,9 @@ Date: 2026-10-19 · Build: Astro 5.18.2 · Browser: headless Chromium (Playwrigh
 | Contact newsletter demo shows an honest "nothing was sent" notice | PASS | PASS |
 | Mobile hamburger exposes the full 17-link hierarchy | PASS | PASS |
 | 12 PDFs download with valid `%PDF-` bodies | PASS | PASS |
-| `X-Robots-Tag: noindex` response header on HTML and PDFs | n/a (static) | **Not present while the site is an unclaimed anonymous deploy**: see below |
+| `X-Robots-Tag: noindex` response header on HTML and PDFs | n/a (static) | **Not possible on GitHub Pages** (no custom headers); HTML pages carry the `noindex, nofollow` meta tag |
 
-Command: `npm test` (local), or `SITE_PASSWORD=… node scripts/browser-test.mjs <url>` (deployed).
+Commands: `npm run test:gh` (local, sub-path build), and `BASE_PATH=/wexmoor-foundation-demo node scripts/browser-test.mjs https://hufsa-stack.github.io/wexmoor-foundation-demo` (live).
 
 ## PDFs
 
@@ -51,10 +51,8 @@ fully PDF/UA tagged.
 
 ## Known limitations
 
-* The live site is an anonymous Netlify deploy, so it is password-gated (HTTP 401) until claimed, and Netlify
-  deletes it if it isn't claimed within 60 minutes of deployment.
-* `_headers` was uploaded and consumed by Netlify, but no `X-Robots-Tag` header was observed on the unclaimed deploy.
-  Re-check after claiming (`curl -sI <url>/uploads/2025/02/Outcomes-Sought-by-The-Wexmoor-Foundation.pdf`).
-  If it is still missing, redeploy from the repo with `netlify.toml`, which also declares the header.
-* `sitemap.xml`, `robots.txt` and canonical links were built for `https://wexmoor-foundation-demo.netlify.app`.
-  Rename the claimed site to `wexmoor-foundation-demo`, or rebuild with `SITE_URL=<actual URL>`.
+* GitHub Pages cannot send response headers, so PDFs have no `X-Robots-Tag: noindex`. Only the HTML meta
+  tag discourages indexing. Neither mechanism guarantees the site stays out of search results.
+* A project site's `robots.txt` is served under `/wexmoor-foundation-demo/`, where crawlers do not look for it.
+  It allows all crawlers anyway. The sitemap is at `/wexmoor-foundation-demo/sitemap.xml`.
+* PDFs are text-based with metadata but are not PDF/UA tagged.
