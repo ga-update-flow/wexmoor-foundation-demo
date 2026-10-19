@@ -1,0 +1,13 @@
+---
+import Base from '../layouts/Base.astro';
+const { title } = Astro.props;
+---
+<Base title={title} bodyClass="portal" noChrome>
+  <div class="portal-top">
+    <a href="/portal/"><img src="/images/logo.svg" alt="The Wexmoor Foundation" width="145" height="44" /></a>
+    <span>Language: English (American) &middot; <a href="/">Return to wexmoor foundation website</a></span>
+  </div>
+  <p class="portal-demo"><strong>Demonstration portal.</strong> No accounts exist, and nothing entered here is stored, submitted or sent to anyone.</p>
+  <slot />
+  <p class="portal-footer">Applicant Portal (demonstration) &middot; The Wexmoor Foundation is fictional. <a href="/become-our-partner/grant-application-process/">Grant Application Process</a></p>
+</Base>

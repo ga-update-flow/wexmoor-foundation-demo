@@ -1,0 +1,25 @@
+---
+import Page from '../../../components/Page.astro';
+const beliefs = [
+  { t: 'Every child can achieve', b: ['We believe every child can achieve at high levels, which is why gaps in achievement between students from low-income families and their more affluent peers are unacceptable and must be closed.', 'Our community is stronger when every student has fair access to excellent teachers and leaders, to resources, and to the supports that help children learn.', 'Strong foundational skills in the early grades make later learning possible and reduce the need for costly remediation.'],
+    w: ['We focus our resources on the students who need them most, most often students from low-income families.', 'When we invest in improving systems, we ask who benefits and who is left out. Strong systems meet the needs of every child.', 'We favor prevention and lasting structural improvement over repair.'] },
+  { t: 'Leadership matters', b: ['Leaders shape the culture and results of every organization, system, school and classroom.', 'Principals set high expectations and build teams of educators who can meet them.', 'Every educator, from first-year teacher to district leader, benefits from coaching, reliable data, time to reflect and real chances to grow.', 'Teachers and leaders should be well supported and should share responsibility for student learning.'],
+    w: ['We look for partnerships that strengthen the connected parts of a talent system.', 'We weigh the track record and effectiveness of the leadership team, from senior staff to the board.', 'We expect clear evidence of leadership commitment before we invest.'] },
+  { t: 'Results guide us', b: ['Measurement and evidence tell us whether organizations, programs and, ultimately, students are making progress.', 'Curriculum and instruction should be grounded in evidence and research.', 'Strong schools and districts should have room to innovate, together with accountability for results.', 'Proficiency is a central goal for every student, and growth is an essential measure of progress along the way.'],
+    w: ['We prioritize investments built on evidence-based strategies.', 'We support partners who measure their work through both qualitative and quantitative data and use what they learn to improve.', 'We treat evaluation as a tool for learning, not only for compliance.'] },
+  { t: 'Better together', b: ['We keep students at the center and value transparency, accountability, continuous learning and partnership.', 'Public schools are a cornerstone of our communities, and public dollars carry a responsibility for openness and results.', 'No single organization has every answer; partnership and shared learning produce the best results.'],
+    w: ['Beyond funding, we aim to be a connector and an advocate for positive and lasting change.', 'We try to model the partnership, learning and accountability we hope to see in our grantees.', 'We pair investments in system improvement with partnerships that reach students directly every day.'] },
+];
+---
+<Page title="Our Approach" section="about" image="/images/banner-approach.svg" alt="Illustration of a teacher leading a math lesson">
+  <h3>Our Commitment to Equity and Belonging</h3>
+  <p class="last">As a foundation dedicated to an excellent public education for every student, The Wexmoor Foundation is committed to equity in how we learn, how we work and where we invest. You can read more about how we reflect, learn and improve <a href="/our-commitment-to-equity/">here</a>.</p>
+  <p>Our Board of Directors adopted our Beliefs to Action for two reasons: to set clear standards for our own practice, and to hold ourselves accountable to them. We want our actions to match our words in every interaction with our community. We feel a deep responsibility to our grantee partners and to the philanthropic legacy of our founders.</p>
+  <h3>Beliefs to Action: What We Believe, and How We Act on It</h3>
+  {beliefs.map((x) => (
+    <>
+      <p><strong>{x.t.toUpperCase()}</strong><br />{x.b.map((l) => <>- {l}<br /></>)}</p>
+      <p><strong>How we work to achieve this:</strong><br />{x.w.map((l) => <>&#10003; {l}<br /></>)}</p>
+    </>
+  ))}
+</Page>

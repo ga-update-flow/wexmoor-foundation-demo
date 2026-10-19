@@ -1,0 +1,19 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { site, documents } from '../../../lib/data.js';
+const f = site.latestFinancials;
+---
+<Base title="Financials" section="about">
+  <div class="holder">
+    <div class="entry-content">
+      <p><img src="/images/banner-financials.svg" alt="Illustration of the Foundation office" width="980" height="245" /></p>
+      <h1 class="contact-title">Financials</h1>
+      <p>The Wexmoor Foundation fiscal year is {site.fiscalYear}.</p>
+      <p>As a private foundation, the Foundation files a Form 990-PF with the IRS each year. Please contact us with any questions about our tax return.</p>
+      <p><strong>{f.label}</strong></p>
+      <p>Total assets were <strong>${f.totalAssets}</strong>. Grants distributed were <strong>${f.grantsDistributed}</strong>.</p>
+      <p><a href={documents[f.doc].path}>Download FY2025 Financial Summary and 990-PF Highlights</a></p>
+    </div>
+  </div>
+</Base>
+<style>.contact-title { color: var(--indigo); font-size: 34px; font-weight: 600; margin: 10px 0 20px; }</style>

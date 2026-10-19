@@ -1,0 +1,20 @@
+---
+import Page from '../../../components/Page.astro';
+import { grantees } from '../../../lib/data.js';
+
+export function getStaticPaths() {
+  return grantees.cycles.map((c, i) => ({ params: { cycle: c.slug }, props: { c, prev: grantees.cycles[i + 1] } }));
+}
+const { c, prev } = Astro.props;
+---
+<Page title={c.title} section="fund" image={c.season === 'spring' ? '/images/banner-spring.svg' : '/images/banner-fall.svg'} alt={`Illustration of a ${c.season} schoolyard`}>
+  <table class="grantees">
+    <caption class="screen-reader-text">{c.title}</caption>
+    <tbody>
+      {c.grantees.map(([name, loc]) => (
+        <tr><td><h3>{name}</h3><p>{grantees.locations[loc]}</p></td></tr>
+      ))}
+    </tbody>
+  </table>
+  {prev && <p><a href={`/what-we-fund/our-grantees/${prev.slug}/`}>{prev.title}</a></p>}
+</Page>

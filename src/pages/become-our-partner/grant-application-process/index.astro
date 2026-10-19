@@ -1,0 +1,12 @@
+---
+import Page from '../../../components/Page.astro';
+import Accordion from '../../../components/Accordion.astro';
+import { steps, withDocs } from '../../../lib/data.js';
+const items = steps.map((s) => ({ title: s.title, html: withDocs(s.html) }));
+---
+<Page title="Grant Application Process" section="partner" image="/images/banner-process.svg" alt="Illustration of students working together at tables">
+  <div class="two-col">
+    <img src="/images/process-side.svg" alt="Illustration of a teacher working with students" width="475" height="580" />
+    <Accordion items={items} id="process" />
+  </div>
+</Page>

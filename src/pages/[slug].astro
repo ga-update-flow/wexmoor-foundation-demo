@@ -1,0 +1,47 @@
+---
+// Root-level posts: previous annual reports and In the News articles.
+import Base from '../layouts/Base.astro';
+import { reports, news } from '../lib/data.js';
+
+export function getStaticPaths() {
+  const paths = [];
+  const prev = reports.slice(1);
+  prev.forEach((r, i) => paths.push({ params: { slug: r.slug }, props: { kind: 'report', item: r, older: prev[i + 1], newer: prev[i - 1] } }));
+  news.forEach((n, i) => paths.push({ params: { slug: n.slug }, props: { kind: 'news', item: n, older: news[i + 1], newer: news[i - 1] } }));
+  return paths;
+}
+const { kind, item, older, newer } = Astro.props;
+const title = kind === 'report' ? `${item.year} Annual Report` : item.title;
+const href = (x) => (x ? `/${x.slug}/` : null);
+const label = (x) => (kind === 'report' ? `${x.year} Annual Report` : x.title);
+---
+<Base title={title} section="about">
+  <article class="post">
+    <div class="holder">
+      <div class="entry-content">
+        <h1 class="post-title">{title}</h1>
+        {kind === 'report' ? (
+          <>
+            <h4 class="posted">Posted {item.posted}</h4>
+            <iframe class="report-embed" src={item.path} title={`${item.year} Annual Report (PDF)`} loading="lazy"></iframe>
+            <p>Download a PDF of our annual report <a href={item.path}>here</a>.</p>
+          </>
+        ) : (
+          <>
+            <h4 class="posted">{item.date}</h4>
+            {item.img && <p><img src={item.img} alt="" width="825" height="510" /></p>}
+            {item.body.map((p) => <p>{p}</p>)}
+            <p>Posted in <a href="/category/in-the-news/">In the News</a></p>
+          </>
+        )}
+        <nav class="post-nav" aria-label="Posts navigation">
+          <span>{older && <a href={href(older)}>&larr; Previous: {label(older)}</a>}</span>
+          <span>{newer && <a href={href(newer)}>Next: {label(newer)} &rarr;</a>}</span>
+        </nav>
+      </div>
+    </div>
+  </article>
+</Base>
+<style>
+  .post-title { color: var(--indigo); font-size: 34px; font-weight: 600; margin: 0 0 18px; line-height: 1.25; }
+</style>

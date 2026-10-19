@@ -1,0 +1,16 @@
+---
+// Expand/collapse list. Panels are always present in the HTML; JS only toggles visibility.
+const { items, id = 'acc' } = Astro.props; // items: [{ title, html }]
+---
+<div class="accordion" data-accordion>
+  {items.map((it, i) => (
+    <div class={`accordion-item${i === 0 ? ' open' : ''}`}>
+      <h3 class="accordion_title">
+        <button type="button" aria-expanded={i === 0 ? 'true' : 'false'} aria-controls={`${id}-${i}`} id={`${id}-h-${i}`}>
+          <span>{it.title}</span><span class="acc-icon" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <div class="accordion_content" id={`${id}-${i}`} role="region" aria-labelledby={`${id}-h-${i}`} set:html={it.html} />
+    </div>
+  ))}
+</div>

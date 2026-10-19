@@ -1,0 +1,36 @@
+---
+import Base from '../../layouts/Base.astro';
+import { site } from '../../lib/data.js';
+---
+<Base title="Contact Us" section="contact">
+  <div class="holder">
+    <div class="entry-content">
+      <p><img src="/images/banner-contact.svg" alt="Illustration of the Foundation office" width="980" height="245" /></p>
+      <h1 class="contact-title">Contact Us</h1>
+      <p>The Wexmoor Foundation is always looking for partners who share our commitment to Early Grades Achievement and Excellent Educators and Leaders. For grant information, please review <a href="/become-our-partner/">Become Our Partner</a>. We are happy to answer any further questions.</p>
+      <hr />
+      <h5 class="org">{site.name.toUpperCase()}</h5>
+      <p>{site.address.line1}<br />{site.address.city}, {site.address.state} {site.address.zip}</p>
+      <p>Phone: {site.phone}<br />Email: <a href={`mailto:${site.email}`}>{site.email}</a></p>
+      <hr />
+      <h3>Join Our Mailing List</h3>
+      <form class="demo-form newsletter" data-demo-form aria-describedby="newsletter-note">
+        <p id="newsletter-note" class="small">This website is a demonstration. The sign-up form does not store or send anything.</p>
+        <label for="nl-email">Email Address *</label>
+        <input type="email" id="nl-email" required autocomplete="off" />
+        <label for="nl-first">First Name</label>
+        <input type="text" id="nl-first" autocomplete="off" />
+        <label for="nl-last">Last Name</label>
+        <input type="text" id="nl-last" autocomplete="off" />
+        <button type="submit" class="btn-solid small">Subscribe</button>
+        <div class="form-status" role="status" tabindex="-1" hidden>Thank you for trying the form. Because this is a demonstration site, nothing was subscribed, saved or sent.</div>
+      </form>
+    </div>
+  </div>
+</Base>
+<style>
+  .contact-title { color: var(--indigo); font-size: 34px; font-weight: 600; margin: 10px 0 20px; }
+  h5.org { color: var(--indigo); font-size: 15px; letter-spacing: .1em; margin: 0 0 10px; }
+  .newsletter { max-width: 420px; }
+  .small { font-size: 13px; color: #666; }
+</style>

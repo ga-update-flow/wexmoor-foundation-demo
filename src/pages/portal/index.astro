@@ -1,0 +1,19 @@
+---
+import PortalShell from '../../components/PortalShell.astro';
+---
+<PortalShell title="Applicant Portal">
+  <div class="portal-card">
+    <h1>Applicant Portal</h1>
+    <p class="sub">Enter your email address to sign in</p>
+    <form class="demo-form" data-portal-signin method="get" action="/portal/eligibility-quiz/">
+      <label for="p-email">Email address</label>
+      <input type="email" id="p-email" autocomplete="off" required />
+      <p><label style="font-weight:400"><input type="checkbox" /> Remember me</label></p>
+      <p style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn-secondary" href="/portal/eligibility-quiz/">Create account</a>
+        <button type="submit" class="btn-primary">Sign in</button>
+      </p>
+    </form>
+    <p class="sub" style="font-size:13px;margin:0">In this demonstration, both options continue directly to the Wexmoor Foundation Eligibility Quiz.</p>
+  </div>
+</PortalShell>

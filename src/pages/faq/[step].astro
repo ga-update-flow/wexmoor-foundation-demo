@@ -1,0 +1,24 @@
+---
+import Base from '../../layouts/Base.astro';
+import { steps, withDocs } from '../../lib/data.js';
+export function getStaticPaths() {
+  return steps.map((s, i) => ({ params: { step: s.slug }, props: { s, prev: steps[i - 1], next: steps[i + 1] } }));
+}
+const { s, prev, next } = Astro.props;
+---
+<Base title={s.title} section="partner">
+  <article class="post">
+    <div class="holder">
+      <div class="entry-content">
+        <h1 class="post-title">{s.title}</h1>
+        <Fragment set:html={withDocs(s.html)} />
+        <p>Posted in <a href="/faq_categories/grant-application-process/">Grant Application Process</a></p>
+        <nav class="post-nav" aria-label="Posts navigation">
+          <span>{prev && <a href={`/faq/${prev.slug}/`}>&larr; {prev.title}</a>}</span>
+          <span>{next && <a href={`/faq/${next.slug}/`}>{next.title} &rarr;</a>}</span>
+        </nav>
+      </div>
+    </div>
+  </article>
+</Base>
+<style>.post-title { color: var(--indigo); font-size: 30px; font-weight: 600; margin: 0 0 22px; line-height: 1.3; }</style>

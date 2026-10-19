@@ -1,0 +1,16 @@
+---
+// Standard interior page: branding band + centered content column.
+import Base from '../layouts/Base.astro';
+import PageBranding from './PageBranding.astro';
+const { title, image, alt, section, description, credit } = Astro.props;
+---
+<Base title={title} section={section} description={description}>
+  <article class="page">
+    <PageBranding title={title} image={image} alt={alt} credit={credit} />
+    <div class="holder">
+      <div class="entry-content">
+        <slot />
+      </div>
+    </div>
+  </article>
+</Base>

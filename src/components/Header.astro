@@ -1,0 +1,51 @@
+---
+import { nav, site } from '../lib/data.js';
+const { section } = Astro.props;
+---
+<div class="announce" data-announce>
+  <p>{site.name} is excited to share our FY {site.currentReportYear} Annual Report! <a href="/annual-reports/">Click here to learn more.</a></p>
+  <button type="button" class="announce-close" aria-label="Close announcement" data-announce-close>&times;</button>
+</div>
+<header class="header">
+  <div class="holder">
+    <div class="branding">
+      <a class="logo" href="/" rel="home"><img src="/images/logo.svg" alt={site.name} width="330" height="100" /></a>
+      <form class="search-form" role="search" method="get" action="/search/">
+        <label><span class="screen-reader-text">Search for:</span>
+          <input type="search" class="search-field" placeholder="SEARCH ..." name="s" /></label>
+        <input type="submit" class="screen-reader-text" value="Search" />
+      </form>
+      <button type="button" class="menu-toggle" aria-controls="mobile-menu" aria-expanded="false" data-menu-toggle>
+        <span class="screen-reader-text">Menu</span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </div>
+    <nav class="main-navigation" aria-label="Main">
+      <ul class="menu" id="main-nav">
+        {nav.map((item) => (
+          <li class={`menu-item${item.children ? ' has-children' : ''}${section === item.key ? ' current' : ''}`}>
+            <a href={item.href}>{item.label}</a>
+            {item.children && (
+              <ul class="sub-menu">
+                {item.children.map((c) => <li class="menu-item"><a href={c.href}>{c.label}</a></li>)}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile" hidden>
+    <ul class="menu">
+      {nav.map((item) => (
+        <li class="menu-item">
+          <a href={item.href}>{item.label}</a>
+          {item.children && (
+            <ul class="sub-menu">
+              {item.children.map((c) => <li><a href={c.href}>{c.label}</a></li>)}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>

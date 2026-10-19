@@ -1,0 +1,19 @@
+---
+import Page from '../../../components/Page.astro';
+import { news } from '../../../lib/data.js';
+---
+<Page title="In the News" section="about" image="/images/banner-news.svg" alt="Illustration of students reading">
+  <p>The Wexmoor Foundation works every day toward lasting change in our focus areas. Check back often for the latest news and announcements.</p>
+  <div class="post-list">
+    {news.map((n) => (
+      <article class={n.img ? '' : 'no-thumb'}>
+        {n.img && <a href={`/${n.slug}/`} class="post-thumbnail" aria-hidden="true" tabindex="-1"><img src={n.img} alt="" width="260" height="161" /></a>}
+        <div>
+          <h3 class="entry-title-sm"><a href={`/${n.slug}/`}>{n.title}</a></h3>
+          <p>{n.excerpt}</p>
+          <a class="button" href={`/${n.slug}/`}>Read More<span class="screen-reader-text">: {n.title}</span></a>
+        </div>
+      </article>
+    ))}
+  </div>
+</Page>

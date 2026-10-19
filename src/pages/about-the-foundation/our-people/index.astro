@@ -1,0 +1,24 @@
+---
+import Page from '../../../components/Page.astro';
+import { people } from '../../../lib/data.js';
+---
+<Page title="Our People" section="about" image="/images/banner-people.svg" alt="Illustration of the Foundation team">
+  <p>The Wexmoor Foundation Board (illustration as of January 2026)</p>
+  <p><img src="/images/board-group.svg" alt="Illustration of the Board of Directors" width="600" height="400" /></p>
+  <h3>Board of Directors</h3>
+  <p>{people.board.map(([n, t]) => <>{n}{t && `, ${t}`}<br /></>)}</p>
+  <hr />
+  <h3>Rising Generation</h3>
+  <p>Continuing the family&rsquo;s tradition, the Rising Generation brings together fourth- and fifth-generation members of the Wexmoor family.</p>
+  <p>{people.risingGeneration.map((n) => <>{n}<br /></>)}</p>
+  <hr />
+  <h3>Community Members Serving on Committees</h3>
+  <p>{people.committees.map(([n, c]) => <>{n}, {c}<br /></>)}</p>
+  <hr />
+  <h3>Foundation Staff</h3>
+  <div class="staff-grid">
+    {people.staff.map((s) => (
+      <div><img src={s.img} alt={`Portrait illustration of ${s.name}`} width="200" height="300" /><p><strong>{s.name}</strong>{s.title}</p></div>
+    ))}
+  </div>
+</Page>

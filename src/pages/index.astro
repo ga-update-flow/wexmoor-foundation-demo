@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../lib/data.js';
+---
+<Base title="HOME" description="The Wexmoor Foundation invests in early reading and excellent educators for the students of Brannock County and North Carolina.">
+  <section class="home-hero" aria-label="Introduction">
+    <img class="bg" src="/images/hero-home.svg" alt="" width="1600" height="1000" />
+    <div class="inner">
+      <img class="icon" src="/images/logo-icon-white.svg" alt="" width="128" height="128" />
+      <h1>We partner with schools and organizations that put results first, so that together, every child</h1>
+      <h1 class="accent">can read, learn and lead.</h1>
+      <a class="btn-solid" href="/about-the-foundation/">Learn More &gt;</a>
+    </div>
+  </section>
+  <dialog class="popup" id="report-popup" slot="after" aria-labelledby="popup-title">
+    <div class="pum-content">
+      <h3 id="popup-title">Our FY {site.currentReportYear} Annual Report is now available!</h3>
+      <p><a class="btn-solid small" href="/annual-reports/">View it here</a></p>
+    </div>
+    <button type="button" class="pum-close" aria-label="Close">&times;</button>
+  </dialog>
+</Base>

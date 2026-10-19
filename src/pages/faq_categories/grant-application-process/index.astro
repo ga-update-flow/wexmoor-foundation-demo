@@ -1,0 +1,24 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { steps } from '../../../lib/data.js';
+const list = [...steps].reverse();
+---
+<Base title="Grant Application Process Archives" section="partner">
+  <div class="holder">
+    <div class="entry-content">
+      <header class="page-header"><h1 class="page-title">Category: Grant Application Process</h1></header>
+      <div class="post-list">
+        {list.map((s) => (
+          <article class="no-thumb">
+            <div>
+              <h3><a href={`/faq/${s.slug}/`}>{s.title}</a></h3>
+              <p>{s.excerpt} &hellip;</p>
+              <a class="button" href={`/faq/${s.slug}/`}>Read More<span class="screen-reader-text">: {s.title}</span></a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</Base>
+<style>.page-title { color: var(--indigo); font-size: 30px; font-weight: 600; margin: 0 0 30px; }</style>

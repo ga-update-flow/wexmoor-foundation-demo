@@ -1,0 +1,39 @@
+---
+import PortalShell from '../../../components/PortalShell.astro';
+---
+<PortalShell title="Letter of Inquiry">
+  <div class="portal-card wide">
+    <h1>Letter of Inquiry</h1>
+    <p class="sub">Please tell us about your organization. Within a few weeks, Foundation staff will let you know whether your organization or program appears to align with the Foundation&rsquo;s desired outcomes. An initial expression of interest does not guarantee an invitation to apply.</p>
+    <form class="demo-form" data-demo-form>
+      <fieldset>
+        <legend>Contact information</legend>
+        <label for="c-first">First name *</label><input type="text" id="c-first" required autocomplete="off" />
+        <label for="c-last">Last name *</label><input type="text" id="c-last" required autocomplete="off" />
+        <label for="c-title">Title</label><input type="text" id="c-title" autocomplete="off" />
+        <label for="c-email">Email *</label><input type="email" id="c-email" required autocomplete="off" />
+        <label for="c-phone">Phone</label><input type="tel" id="c-phone" autocomplete="off" />
+      </fieldset>
+      <fieldset>
+        <legend>Organization</legend>
+        <label for="o-name">Legal name of organization *</label><input type="text" id="o-name" required autocomplete="off" />
+        <label for="o-ein">Organization&rsquo;s Tax ID (EIN) *</label><input type="text" id="o-ein" required placeholder="XX-XXXXXXX" pattern="[0-9]{2}-?[0-9]{7}" autocomplete="off" />
+      </fieldset>
+      <fieldset>
+        <legend>Alignment with the Foundation&rsquo;s mission</legend>
+        <label for="o-desc">Briefly describe how your organization&rsquo;s purpose and/or program supports the mission of the Foundation *</label>
+        <textarea id="o-desc" rows="6" maxlength="2500" required></textarea>
+        <label for="o-geo">Geographic area served *</label>
+        <select id="o-geo" required>
+          <option value="">Select one</option>
+          <option>Brannock County, NC</option>
+          <option>North Carolina (state level)</option>
+          <option>Brannock County and North Carolina (state level)</option>
+          <option>Other</option>
+        </select>
+      </fieldset>
+      <button type="submit" class="btn-primary">Submit Letter of Inquiry</button>
+      <div class="form-status" role="status" tabindex="-1" hidden><strong>Demonstration only.</strong> This Letter of Inquiry was <strong>not</strong> submitted, saved or sent to anyone. No confirmation email will be sent.</div>
+    </form>
+  </div>
+</PortalShell>

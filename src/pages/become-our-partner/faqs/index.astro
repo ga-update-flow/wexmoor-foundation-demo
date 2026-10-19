@@ -1,0 +1,12 @@
+---
+import Page from '../../../components/Page.astro';
+import Accordion from '../../../components/Accordion.astro';
+import { faqs, withDocs } from '../../../lib/data.js';
+const items = faqs.map((f) => ({ title: f.q, html: withDocs(f.a) }));
+---
+<Page title="FAQs" section="partner" image="/images/banner-faqs.svg" alt="Illustration of students reading">
+  <div class="two-col">
+    <img src="/images/faqs-side.svg" alt="Illustration of students on a playground" width="435" height="535" />
+    <Accordion items={items} id="faq" />
+  </div>
+</Page>

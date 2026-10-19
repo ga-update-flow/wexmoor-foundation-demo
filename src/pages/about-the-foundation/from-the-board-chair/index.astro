@@ -1,0 +1,13 @@
+---
+import Page from '../../../components/Page.astro';
+import { people } from '../../../lib/data.js';
+---
+<Page title="From the Board Chair" section="about" image="/images/banner-board-chair.svg" alt="Illustration of the Foundation office">
+  <p><img class="alignleft" src="/images/chair-portrait.svg" alt={`Portrait illustration of ${people.chair.name}`} width="300" height="379" /></p>
+  <p>I have always believed that a great public school can change the direction of a young person&rsquo;s life. North Carolina has a proud tradition of public education, and yet too many of our children still leave third grade unable to read well, and too many classrooms still struggle to attract and keep excellent teachers.</p>
+  <p>Through our two focus areas, <a href="/what-we-fund/early-grades-achievement/">early grades achievement</a> and <a href="/what-we-fund/educators-leaders/">excellent educators and leaders</a>, we at The Wexmoor Foundation see real opportunities to create lasting change for students in Brannock County and across our state.</p>
+  <p>Teachers and principals are the most important in-school factors in how much students learn. We support efforts to recruit, prepare, develop and keep the very best educators in our schools. We also know that a strong early foundation makes every later year easier. Alongside programs that work directly with children, we support efforts to improve early literacy systems and the state policies that shape kindergarten through third grade classrooms.</p>
+  <p>The Wexmoor Foundation&rsquo;s story began in 1931 with my great-grandfather, Ambrose Wexmoor, and his brother, Silas, and it has been carried forward by four generations of our family. We are deeply committed to our mission, and we know we do not have every answer. We are always learning and always looking for new partners. We hope you will join us in working toward an excellent public education for every child.</p>
+  <h4>{people.chair.name}, Board Chair of The Wexmoor Foundation</h4>
+  <div class="clear"></div>
+</Page>

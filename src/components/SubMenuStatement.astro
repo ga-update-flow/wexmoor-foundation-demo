@@ -1,0 +1,12 @@
+---
+// Two-column block: vertical sub-menu on the left, large italic statement on the right.
+const { links, statement } = Astro.props;
+---
+<div class="submenu-statement">
+  <nav class="side-menu" aria-label="Section">
+    <ul class="menu">
+      {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+    </ul>
+  </nav>
+  <div class="statement"><h2>{statement}</h2></div>
+</div>

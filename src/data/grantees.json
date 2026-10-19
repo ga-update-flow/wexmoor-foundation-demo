@@ -1,0 +1,30 @@
+{
+  "locations": { "L": "Harlow Springs, NC", "S": "State Level - NC" },
+  "cycles": [
+    { "slug": "spring-2026-grants", "title": "Spring 2026 Grants", "season": "spring", "fy": 2026, "grantees": [
+      ["Bright Pages Book Bank", "L"], ["Brannock Coaching Collaborative", "L"], ["Brannock County Schools Education Fund", "L"],
+      ["Brannock County Schools Education Fund", "L"], ["Carolina Piedmont State University", "S"], ["Carolina Teacher Residency Collaborative", "S"],
+      ["Harlow Springs Community Schools Partnership", "L"], ["Harlow Springs Tutoring Corps", "L"], ["NC Literacy Policy Forum", "S"],
+      ["North Carolina Center for Early Reading Research", "S"], ["Read Brannock", "L"], ["Tar Heel Principal Fellows Network", "S"] ] },
+    { "slug": "fall-2025-grants", "title": "Fall 2025 Grants", "season": "fall", "fy": 2026, "grantees": [
+      ["Blue Ridge Teaching Fellows", "S"], ["Brannock Reading Volunteers", "L"], ["Brannock Summer Scholars", "L"],
+      ["Educator Pathways Institute of North Carolina", "S"], ["Harlow Springs Early Math Initiative", "L"], ["Millrace Family Literacy Network", "L"],
+      ["NC Assistant Principal Accelerator Alliance", "S"], ["Read Brannock", "L"], ["Read Brannock", "S"] ] },
+    { "slug": "spring-2025-grants", "title": "Spring 2025 Grants", "season": "spring", "fy": 2025, "grantees": [
+      ["Brannock Coaching Collaborative", "L"], ["Brannock County Schools Education Fund", "L"], ["Carolina Teacher Residency Collaborative", "S"],
+      ["Harlow Springs Tutoring Corps", "L"], ["NC Literacy Policy Forum", "S"], ["North Carolina Center for Early Reading Research", "S"],
+      ["Read Brannock", "L"], ["Tar Heel Principal Fellows Network", "S"] ] },
+    { "slug": "fall-2024-grants", "title": "Fall 2024 Grants", "season": "fall", "fy": 2025, "grantees": [
+      ["Bright Pages Book Bank", "L"], ["Brannock Summer Scholars", "L"], ["Carolina Piedmont State University", "S"],
+      ["Educator Pathways Institute of North Carolina", "S"], ["Harlow Springs Community Schools Partnership", "L"], ["Millrace Family Literacy Network", "L"],
+      ["NC Assistant Principal Accelerator Alliance", "S"], ["Read Brannock", "L"] ] },
+    { "slug": "spring-2024-grants", "title": "Spring 2024 Grants", "season": "spring", "fy": 2024, "grantees": [
+      ["Blue Ridge Teaching Fellows", "S"], ["Brannock County Schools Education Fund", "L"], ["Carolina Teacher Residency Collaborative", "S"],
+      ["Harlow Springs Tutoring Corps", "L"], ["North Carolina Center for Early Reading Research", "S"], ["Read Brannock", "L"],
+      ["Tar Heel Principal Fellows Network", "S"] ] },
+    { "slug": "fall-2023-grants", "title": "Fall 2023 Grants", "season": "fall", "fy": 2024, "grantees": [
+      ["Brannock Coaching Collaborative", "L"], ["Brannock Reading Volunteers", "L"], ["Brannock Summer Scholars", "L"],
+      ["Educator Pathways Institute of North Carolina", "S"], ["Millrace Family Literacy Network", "L"], ["NC Literacy Policy Forum", "S"],
+      ["Read Brannock", "L"] ] }
+  ]
+}

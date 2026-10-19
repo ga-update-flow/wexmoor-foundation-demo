@@ -1,0 +1,13 @@
+---
+import { footerNav, site } from '../lib/data.js';
+---
+<footer class="footer">
+  <div class="holder">
+    <nav class="footer-navigation" aria-label="Footer">
+      <ul class="menu">
+        {footerNav.map((i) => <li><a href={i.href}>{i.label}</a></li>)}
+      </ul>
+    </nav>
+  </div>
+  <p class="demo-note">{site.disclaimer}</p>
+</footer>

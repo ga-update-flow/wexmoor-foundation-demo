@@ -1,0 +1,15 @@
+{
+  "chair": { "name": "Margaret Wexmoor Ellison", "title": "Board Chair" },
+  "board": [
+    ["Margaret Wexmoor Ellison", "Chair"], ["Daniel Okafor", "Vice Chair"], ["Thomas Wexmoor Reid", "Treasurer"],
+    ["Priya Natarajan", "Secretary"], ["Henry Wexmoor Ames", ""], ["Dr. Marcus Bell", ""], ["Elena Ruiz-Hart", ""],
+    ["Samuel Ortega", ""], ["Caroline Wexmoor", ""], ["Dr. Lauren Whitfield", ""]
+  ],
+  "risingGeneration": ["Avery Ellison", "Hannah Ames", "Owen Ames", "Claire Reid", "Julia Reid", "Lena Ellison", "Ezra Wexmoor", "Isaac Wexmoor", "Tessa Wexmoor"],
+  "committees": [["Robert Langford", "Finance/Investment Committee"], ["Gail Thornbury", "Finance/Investment Committee"], ["Dr. Simone Achebe", "Grants Committee"]],
+  "staff": [
+    { "name": "Dr. Renee Callahan", "title": "Executive Director", "img": "/images/staff-callahan.svg" },
+    { "name": "Martin Osei", "title": "Grants Manager", "img": "/images/staff-osei.svg" },
+    { "name": "Leah Moreno", "title": "Operations & Communications Coordinator", "img": "/images/staff-moreno.svg" }
+  ]
+}

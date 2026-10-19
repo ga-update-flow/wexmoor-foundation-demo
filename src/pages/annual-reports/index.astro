@@ -1,0 +1,21 @@
+---
+import Page from '../../components/Page.astro';
+import { reports } from '../../lib/data.js';
+const current = reports[0];
+const previous = reports.slice(1);
+---
+<Page title="Annual Reports" section="about" image="/images/banner-annual-reports.svg" alt="Illustration of students raising hands in a classroom">
+  <p>We are pleased to share our FY {current.year} Annual Report, a look back at a year of progress, partnership and shared commitment to the students of Brannock County and North Carolina. This year we marked ten years of Read Brannock, the community literacy effort the Foundation helped launch, and we deepened our work to prepare and support excellent teachers for the classrooms that need them most. The report reflects the dedication of the teachers, principals, tutors, families and partner organizations who make this work possible. We invite you to explore the FY {current.year} Report and learn more about what is happening in classrooms across our community and our state.</p>
+  <h3>{current.year} Annual Report</h3>
+  <h4 class="posted">Posted {current.posted}</h4>
+  <iframe class="report-embed" src={current.path} title={`FY ${current.year} Annual Report (PDF)`} loading="lazy"></iframe>
+  <p><a href={current.path}>Click here to download the pdf version of the {current.year} Annual Report</a></p>
+  <aside class="widget">
+    <h3 class="widget-title">View Previous Annual Reports</h3>
+    <nav class="side-menu" aria-label="Previous annual reports">
+      <ul class="menu">
+        {previous.map((r) => <li><a href={`/${r.slug}/`}>{r.year} Annual Report</a></li>)}
+      </ul>
+    </nav>
+  </aside>
+</Page>

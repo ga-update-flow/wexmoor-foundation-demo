@@ -1,0 +1,10 @@
+---
+const { title, image, alt = '', credit } = Astro.props;
+---
+<div class="page-branding">
+  <img src={image} alt={alt} width="1600" height="400" />
+  <div class="holder">
+    <header class="entry-header"><h1 class="entry-title">{title}</h1></header>
+  </div>
+  {credit && <span class="photo-credit">{credit}</span>}
+</div>

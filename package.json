@@ -1,0 +1,20 @@
+{
+  "name": "wexmoor-foundation-demo",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Independent demonstration website for a fictional education foundation, structured after a real grantmaker's site for grant-crawler testing.",
+  "scripts": {
+    "images": "python3 scripts/make_images.py",
+    "pdfs": "python3 scripts/make_pdfs.py",
+    "assets": "npm run images && npm run pdfs",
+    "dev": "astro dev",
+    "build": "astro build && node scripts/postbuild.mjs",
+    "preview": "astro preview",
+    "check-links": "node scripts/check-links.mjs",
+    "test": "npm run build && npm run check-links && node scripts/browser-test.mjs"
+  },
+  "dependencies": {
+    "astro": "^5.14.0"
+  }
+}

@@ -1,0 +1,14 @@
+---
+import Page from '../../components/Page.astro';
+---
+<Page title="Search" image="/images/banner-search.svg" alt="Illustration of students reading">
+  <h2 id="search-heading">Search this site</h2>
+  <form class="demo-search" role="search" method="get" action="/search/">
+    <label for="search-again" class="screen-reader-text">Search for:</label>
+    <input type="search" id="search-again" name="s" class="search-field" style="width:260px" />
+    <button type="submit" class="btn-outline">Search</button>
+  </form>
+  <div id="search-results" class="post-list" aria-live="polite" style="margin-top:30px">
+    <noscript><p>Search requires JavaScript. You can browse every page from the menu above or from the <a href="/sitemap.xml">sitemap</a>.</p></noscript>
+  </div>
+</Page>

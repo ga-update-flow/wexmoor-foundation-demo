@@ -1,0 +1,26 @@
+{
+  "name": "The Wexmoor Foundation",
+  "shortName": "Wexmoor Foundation",
+  "tagline": "Read. Teach. Lead.",
+  "founded": 1957,
+  "memorialFundYear": 1931,
+  "address": { "line1": "410 Millrace Street, Suite 200", "city": "Harlow Springs", "state": "NC", "zip": "27299" },
+  "phone": "(336) 555-0148",
+  "email": "info@example.org",
+  "grantsEmail": "grants@example.org",
+  "jobsEmail": "careers@example.org",
+  "homeCounty": "Brannock County",
+  "district": "Brannock County Schools",
+  "literacyInitiative": "Read Brannock",
+  "annualGiving": "$2.4 million",
+  "indirectCap": "12%",
+  "fiscalYear": "July 1 - June 30",
+  "latestFinancials": {
+    "label": "Fiscal Year 2025 (July 1, 2024 - June 30, 2025)",
+    "totalAssets": "57,316,402",
+    "grantsDistributed": "2,412,750",
+    "doc": "financials"
+  },
+  "currentReportYear": 2026,
+  "disclaimer": "Independent demonstration site. The Wexmoor Foundation, its people, programs, grantees and documents are fictional and are not affiliated with any real organization."
+}
