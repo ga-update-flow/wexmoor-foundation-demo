@@ -87,7 +87,23 @@ docs/                        reference inventory and testing report
   `netlify.toml`). These directives *discourage* indexing by search engines that honor them; they cannot
   guarantee the site never appears in search results.
 
-## Deployment (Netlify)
+## Deployment (GitHub Pages)
+
+The site is published as a GitHub Pages project site from the `gh-pages` branch:
+
+```bash
+npm run build:gh     # SITE_URL=https://hufsa-stack.github.io BASE_PATH=/wexmoor-foundation-demo
+npm run test:gh      # same build + link check + browser tests under the sub-path
+```
+
+`BASE_PATH` makes `scripts/postbuild.mjs` prefix every root-relative URL (HTML, CSS, JS, sitemap,
+search index). It also writes `.nojekyll` so Pages keeps the `_astro/` folder. GitHub Pages cannot set
+custom response headers, so on Pages the `noindex, nofollow` directive is delivered by the
+`<meta name="robots">` tag on every HTML page only. PDFs get no `X-Robots-Tag` there. A project site's
+`robots.txt` lives under the sub-path, where crawlers do not look for it; the sitemap is at
+`/wexmoor-foundation-demo/sitemap.xml`.
+
+## Deployment (Netlify, alternative)
 
 `netlify.toml` builds with `npm run build` and publishes `dist/`. With a Netlify account:
 

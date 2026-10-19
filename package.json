@@ -12,7 +12,9 @@
     "build": "astro build && node scripts/postbuild.mjs",
     "preview": "astro preview",
     "check-links": "node scripts/check-links.mjs",
-    "test": "npm run build && npm run check-links && node scripts/browser-test.mjs"
+    "test": "npm run build && npm run check-links && node scripts/browser-test.mjs",
+    "build:gh": "SITE_URL=https://hufsa-stack.github.io BASE_PATH=/wexmoor-foundation-demo npm run build",
+    "test:gh": "npm run build:gh && BASE_PATH=/wexmoor-foundation-demo node scripts/check-links.mjs && BASE_PATH=/wexmoor-foundation-demo node scripts/browser-test.mjs"
   },
   "dependencies": {
     "astro": "^5.14.0"

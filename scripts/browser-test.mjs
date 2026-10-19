@@ -10,23 +10,25 @@ let chromium;
 try { ({ chromium } = require('playwright')); } catch { ({ chromium } = require('/opt/node-tools/node_modules/playwright')); }
 
 const DIST = path.resolve('dist');
+const BASEPATH = (process.env.BASE_PATH || '').replace(/\/$/, '');
 let BASE = process.argv[2];
 let server;
 if (!BASE) {
   const types = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml', '.pdf': 'application/pdf', '.json': 'application/json', '.png': 'image/png', '.ico': 'image/x-icon', '.xml': 'application/xml', '.txt': 'text/plain' };
   server = http.createServer((req, res) => {
     let p = decodeURIComponent(new URL(req.url, 'http://x').pathname);
+    if (BASEPATH) { if (!p.startsWith(BASEPATH + '/')) { res.writeHead(404); return res.end('outside base'); } p = p.slice(BASEPATH.length); }
     let f = path.join(DIST, p);
     if (fs.existsSync(f) && fs.statSync(f).isDirectory()) f = path.join(f, 'index.html');
     if (!fs.existsSync(f)) { res.writeHead(404); return res.end(fs.readFileSync(path.join(DIST, '404.html'))); }
     res.writeHead(200, { 'content-type': types[path.extname(f)] || 'application/octet-stream' });
     fs.createReadStream(f).pipe(res);
   }).listen(4399);
-  BASE = 'http://localhost:4399';
+  BASE = 'http://localhost:4399' + BASEPATH;
 }
 
 const sitemap = fs.readFileSync(path.join(DIST, 'sitemap.xml'), 'utf8');
-const urls = [...sitemap.matchAll(/<loc>[^<]*?(\/[^<]*)<\/loc>/g)].map((m) => new URL(m[1], 'http://x').pathname);
+const urls = [...sitemap.matchAll(/<loc>([^<]*)<\/loc>/g)].map((m) => new URL(m[1]).pathname.slice(BASEPATH.length));
 const pages = [...urls.filter((u) => !u.endsWith('.pdf')), '/portal/', '/portal/eligibility-quiz/', '/portal/letter-of-inquiry/'];
 const pdfs = urls.filter((u) => u.endsWith('.pdf'));
 
