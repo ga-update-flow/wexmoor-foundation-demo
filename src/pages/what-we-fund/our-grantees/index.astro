@@ -4,10 +4,11 @@ import { grantees } from '../../../lib/data.js';
 ---
 <Page title="Our Grantees" section="fund" image="/images/banner-grantees.svg" alt="Illustration of students in a classroom">
   <h3>Partners in a Shared Vision</h3>
-  <p>We value our grantees as partners, not simply recipients of funding. Since sharpening our focus in 2014, we have been fortunate to build partnerships with strong organizations that have shown success in our two focus areas:</p>
+  <p>We value our grantees as partners, not simply recipients of funding. Since sharpening our focus in 2014, we have been fortunate to build partnerships with strong organizations that have shown success in our focus areas:</p>
   <ul>
     <li><strong>Early Grades Achievement:</strong> Increasing the number of children in kindergarten through third grade who achieve on or above grade level in core subjects</li>
     <li><strong>Educators &amp; Leaders:</strong> Recruiting, developing and retaining excellent teachers and leaders in K-12 public schools</li>
+    <li><strong>Extracurricular Activities:</strong> Expanding students&rsquo; participation in high-quality extracurricular activities that strengthen their engagement in school and support their growth in learning</li>
   </ul>
   <ul>
     {grantees.cycles.map((c) => <li><a href={`/what-we-fund/our-grantees/${c.slug}/`}>{c.title}</a></li>)}

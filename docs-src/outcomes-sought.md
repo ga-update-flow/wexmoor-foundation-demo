@@ -6,10 +6,11 @@ We know that there are many approaches to evaluation. Few organizations have the
 
 Whatever method an organization uses, we are most interested in evaluation that drives learning and continuous improvement, rather than evaluation used only for compliance and reporting.
 
-The Wexmoor Foundation supports work in two focus areas:
+The Wexmoor Foundation supports work in three focus areas:
 
 - **Early Grades Achievement:** Increasing the number of children in kindergarten through third grade who achieve on or above grade level in core subjects
 - **Educators & Leaders:** Recruiting, developing and retaining excellent teachers and leaders in K-12 public schools
+- **Extracurricular Activities:** Expanding students' participation in high-quality extracurricular activities that strengthen their engagement in school and support their growth in learning
 
 The sections below describe the kinds of outcomes we most want to support in each focus area. Because the field of education changes quickly, no list of acceptable outcomes can be complete. Above all, we hope to talk with grantseekers about their approach and their use of data, how they know whether they are making a difference, and the theory of change behind their work.
 
@@ -63,3 +64,22 @@ Teachers and leaders, as adult learners, deserve high-quality opportunities to i
 - **Practice-based:** Learning includes modeling, rehearsal and feedback connected to educators' real classrooms.
 - **Sustained:** Support continues long enough to change practice, with coaching during implementation.
 - **Aligned:** Learning goals connect to educator performance standards and to what students are expected to learn.
+
+## Extracurricular Activities
+
+Extracurricular activities extend students' learning beyond the regular classroom and give them additional ways to engage with school. As in our other focus areas, participation alone does not tell us whether a program is making a difference. What interests us most is the **growth** of an individual student or group of students over time, and evidence that taking part is connected to stronger engagement and learning.
+
+We understand that activities offered outside the regular school day vary widely in their goals and design, and that measuring their contribution to student learning can be complicated. That complexity does not remove the value of trying. We want to hear how each program defines success, how it collects data for each participating student, and how it uses that information to improve.
+
+Examples of measures grantees might use include:
+
+- Participation and attendance
+  - **Attendance**, including daily attendance and program participation records. Chronic absence can seriously slow a young child's progress in reading and mathematics.
+- Student experience and engagement
+  - **Student engagement and behavior**, including measures of attitude toward learning and disciplinary data.
+  - **Feedback** from teachers, families and students.
+- Evidence of learning
+  - **Performance tasks**, such as projects or writing samples scored with a rubric.
+  - Where a program aims to support academic progress, **summative and/or formative measures** of student achievement, such as those described for Early Grades Achievement.
+
+As with all of our investments, we are most interested in evaluation that drives learning and continuous improvement, rather than evaluation used only for compliance and reporting.
