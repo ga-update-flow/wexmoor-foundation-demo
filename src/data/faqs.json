@@ -9,5 +9,5 @@
   { "q": "What is the relationship between The Wexmoor Foundation and Wexmoor Furniture Company?", "a": "<p>The Wexmoor Foundation is a family foundation established by the founders of the Wexmoor Furniture Company. The Foundation has always been a separate entity from the company, which was sold in 2015 and has no role in the Foundation&rsquo;s governance or grantmaking.</p>" },
   { "q": "Does the Foundation sponsor events?", "a": "<p>No, the Foundation does not sponsor fundraising events.</p>" },
   { "q": "Can I request items for a raffle or silent auction?", "a": "<p>The Wexmoor Foundation does not provide merchandise or donated items.</p>" },
-  { "q": "Does the Foundation have a limit to Indirect (or F&A) Costs?", "a": "<p>It is the policy of The Wexmoor Foundation Board of Directors to allow up to 12% of a grant to an institution of higher education to be used for indirect overhead expenses, or &ldquo;F&amp;A.&rdquo; A copy of this policy can be found <a href=\"{{indirect}}\">here</a>.</p>" }
+  { "q": "Does the Foundation have a limit to Indirect (or F&A) Costs?", "a": "<p>It is the policy of The Wexmoor Foundation Board of Directors to allow up to 15% of a grant to an institution of higher education to be used for indirect overhead expenses, or &ldquo;F&amp;A.&rdquo; A copy of this policy can be found <a href=\"{{indirect}}\">here</a>.</p>" }
 ]
