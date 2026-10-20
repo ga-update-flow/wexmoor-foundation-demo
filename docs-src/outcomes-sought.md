@@ -6,12 +6,13 @@ We know that there are many approaches to evaluation. Few organizations have the
 
 Whatever method an organization uses, we are most interested in evaluation that drives learning and continuous improvement, rather than evaluation used only for compliance and reporting.
 
-The Wexmoor Foundation supports work in two focus areas:
+The Wexmoor Foundation supports work in three focus areas:
 
 - **Early Grades Achievement:** Increasing the number of children in kindergarten through third grade who achieve on or above grade level in core subjects
 - **Educators & Leaders:** Recruiting, developing and retaining excellent teachers and leaders in K-12 public schools
+- **Extracurricular Activities:** Supporting extracurricular activities as an important component of a successful education
 
-The sections below describe the kinds of outcomes we most want to support in each focus area. Because the field of education changes quickly, no list of acceptable outcomes can be complete. Above all, we hope to talk with grantseekers about their approach and their use of data, how they know whether they are making a difference, and the theory of change behind their work.
+The sections below describe the kinds of outcomes we most want to support in Early Grades Achievement and Educators & Leaders. Because the field of education changes quickly, no list of acceptable outcomes can be complete. Above all, we hope to talk with grantseekers about their approach and their use of data, how they know whether they are making a difference, and the theory of change behind their work.
 
 ## Early Grades Achievement
 
