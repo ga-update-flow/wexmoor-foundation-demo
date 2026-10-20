@@ -283,6 +283,17 @@ def financial_summary():
     return full
 
 
+def impact_plan_soft_404():
+    """Soft-404 test: the Impact Plan URL still returns a valid PDF (HTTP 200) whose content is a 'Page not found' message."""
+    d = DOCS["impactPlan"]
+    doc, full = make_doc(d["path"], "Page not found - Wexmoor Foundation", "Page not found", letter)
+    doc.build([Paragraph("Page not found", S["h1"]),
+               Paragraph("Oops! That page can&rsquo;t be found.", S["h2"]),
+               Paragraph("It looks like nothing was found at this location. Try the menu on The Wexmoor Foundation website, "
+                         "or search the site.", S["body"])])
+    return full
+
+
 def one_pagers():
     md = read_src("impact-plan.md")
     out = []
@@ -301,7 +312,7 @@ if __name__ == "__main__":
         build_md("outcomes", "outcomes-sought.md", "Guidance for grantseekers on outcomes sought in each focus area"),
         build_md("indirect", "indirect-cost-policy.md", "Board policy on indirect (F&A) costs"),
         build_md("job", "job-profile.md", "Program Officer job profile"),
-        build_md("impactPlan", "impact-plan.md", "Foundation strategy and impact plan", landscape(letter), "none"),
+        impact_plan_soft_404(),
         financial_summary(),
         *one_pagers(),
         *[annual_report(r) for r in REPORTS],
