@@ -99,7 +99,7 @@ try {
     await items.nth(1).locator('button').click();
     const toggled = (await items.nth(1).locator('.accordion_content').isVisible()) && !(await items.nth(0).locator('.accordion_content').isVisible());
     const html = await page.content();
-    const allInDom = (await page.locator('.accordion_content').count()) === n && html.includes(u.includes('faqs') ? 'Indirect' : 'Board meets in April');
+    const allInDom = (await page.locator('.accordion_content').count()) === n && html.includes(u.includes('faqs') ? 'Indirect' : 'Board meets in');
     check(`${u}: accordion (${n} items) expands/collapses; collapsed text present in HTML`, firstOpen && secondHidden && toggled && allInDom);
   }
 

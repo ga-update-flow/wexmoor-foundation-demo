@@ -16,5 +16,8 @@ Changes from the baseline:
   decisions communicated". Final funding decisions are made at the Board meeting and applicants are notified afterwards
   (Step 4), so Spring decisions cannot be communicated in April once the meeting is in May.
 
+* `scripts/browser-test.mjs` (tooling only): the accordion check looked for the literal text "Board meets in April"; it now
+  checks for "Board meets in", so it verifies the same collapsed Step 4 text without depending on the month.
+
 Unchanged: the Fall Board meeting (October/November), Fall decisions, all application deadlines and invitation months, and
 every other page, document and asset. This file is repository documentation only; it is not part of the built website.
