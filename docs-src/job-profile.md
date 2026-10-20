@@ -2,7 +2,7 @@
 
 ## About The Wexmoor Foundation
 
-The Wexmoor Foundation is a family foundation that invests in public education, specifically early grades achievement and excellent educators and leaders. It carries forward the commitment to community of the family that founded the Wexmoor Furniture Company. The Foundation makes grants in Brannock County and considers select state-level initiatives in North Carolina.
+The Wexmoor Foundation is a family foundation that invests in public education, specifically early grades achievement and excellent educators and leaders. It carries forward the commitment to community of the family that founded the Wexmoor Furniture Company. The Foundation makes grants in Brannock County, considers select state-level initiatives in North Carolina, and also funds international programs and organizations.
 
 ## About the Program Officer Role
 
