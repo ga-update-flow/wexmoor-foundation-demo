@@ -127,6 +127,7 @@ try {
   await page.click('text=Continue to Letter of Inquiry');
   await page.fill('#c-first', 'Test'); await page.fill('#c-last', 'User'); await page.fill('#c-email', 'test@example.org');
   await page.fill('#o-name', 'Test Org'); await page.fill('#o-ein', '12-3456789'); await page.fill('#o-desc', 'Testing');
+  if (await page.locator('#o-budget').count()) await page.fill('#o-budget', 'Test budget');
   await page.selectOption('#o-geo', { index: 1 });
   const reqs = [];
   page.on('request', (r) => { if (r.method() !== 'GET') reqs.push(r.url()); });
