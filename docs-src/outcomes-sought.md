@@ -1,4 +1,6 @@
-# Outcomes Sought with Focus Areas: A Resource for Grantseekers
+# FY 2027 Outcomes Sought
+
+## Outcomes Sought with Focus Areas: A Resource for Grantseekers
 
 This document gives grantseekers a sense of the kinds of outcomes The Wexmoor Foundation is interested in supporting. It is not meant to be comprehensive. Instead, it offers a starting point for conversation as your organization considers its alignment with Foundation priorities or prepares a final application.
 

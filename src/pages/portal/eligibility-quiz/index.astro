@@ -6,7 +6,7 @@ const qs = [
   { name: 'geo', pass: 'yes', q: 'Does the proposed work serve public school students in Brannock County, North Carolina, or is it a state-level initiative in North Carolina?' },
   { name: 'focus', pass: 'yes', q: 'Does the proposed work fall within Early Grades Achievement (kindergarten through third grade) or Educators & Leaders (recruiting, developing and retaining K-12 teachers and school leaders)?' },
   { name: 'excluded', pass: 'no', q: 'Is the request for an individual, a private elementary or secondary school, an international program, or primarily for fundraising (such as event sponsorship, door prizes or giveaways)?' },
-  { name: 'reviewed', pass: 'yes', q: 'Have you reviewed the Foundation’s Mission & Guidelines and Outcomes Sought document?' },
+  { name: 'reviewed', pass: 'yes', q: 'Have you reviewed the Foundation’s Mission & Guidelines and FY 2027 Outcomes Sought document?' },
 ];
 ---
 <PortalShell title="Eligibility Quiz">
@@ -23,7 +23,7 @@ const qs = [
           </div>
         </fieldset>
       ))}
-      <p style="font-size:13px">Resources: <a href="/what-we-fund/mission-guidelines/" target="_blank">Mission &amp; Guidelines</a> &middot; <a href={documents.outcomes.path} target="_blank">Outcomes Sought (PDF)</a></p>
+      <p style="font-size:13px">Resources: <a href="/what-we-fund/mission-guidelines/" target="_blank">Mission &amp; Guidelines</a> &middot; <a href={documents.outcomes.path} target="_blank">FY 2027 Outcomes Sought (PDF)</a></p>
       <button type="submit" class="btn-primary">Check eligibility</button>
     </form>
     <div id="quiz-pass" class="form-status" hidden>
