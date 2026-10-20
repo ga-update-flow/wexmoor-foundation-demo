@@ -34,7 +34,7 @@ The Foundation's grantmaking strategy is framed by its Beliefs to Action stateme
 
 ## Early Grades Achievement Strategic Issue: Early Reading Proficiency
 
-**Goal:** Increase the percentage of Brannock County third graders reading at College and Career Ready levels on the state reading assessment from 31% in spring 2023 to 75% by spring 2031.
+**Goal:** Increase the percentage of Brannock County third graders reading at College and Career Ready levels on the state reading assessment from 31% in spring 2023 to 80% by spring 2032.
 
 > The years from kindergarten through third grade are when children learn to read. Every year after that, they read to learn.
 
