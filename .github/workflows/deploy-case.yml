@@ -1,0 +1,97 @@
+# Publishes ONE branch at https://hufsa-stack.github.io/wexmoor-foundation-demo/
+#
+# Actions -> Deploy Case -> Run workflow -> pick a branch -> Run workflow.
+#
+# This file lives only on `main`. It never edits any source branch: it checks out the
+# selected branch by itself (no merge with main or any other branch), builds it in a fresh
+# runner, and replaces the whole content of `gh-pages` with that build in one normal commit.
+# No force-push; earlier deployments stay in gh-pages history.
+
+name: Deploy Case
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: Branch to publish at the live URL (main = original website)
+        type: choice
+        required: true
+        options:
+          - main
+          - preview-geographic-focus-only
+          - preview-loi-budget-only
+          - preview-extracurricular-only
+          - version-01-spring-deadline-march
+          - version-02-fall-deadline-september
+          - version-03-spring-board-meeting-may
+          - version-04-fall-board-meeting-december
+          - version-05-private-schools-eligibility
+          - version-06-contact-email-update
+          - version-07-extracurricular-activities-focus
+          - early-reading-target-update
+          - early-grades-outcomes-measurement-update
+          - educator-retention-priority-update
+          - loi-response-timeline-update
+          - full-application-evidence-requirement
+          - grant-reporting-deadline-update
+          - fiscal-sponsor-agreement-requirement
+          - indirect-cost-cap-update
+          - outcomes-sought-document-replacement
+          - impact-plan-soft-404-test
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy-live-site
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the selected branch only
+        uses: actions/checkout@v4
+        with:
+          ref: refs/heads/${{ inputs.branch }}
+          path: source
+          persist-credentials: false
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build the selected branch
+        working-directory: source
+        run: |
+          npm ci
+          npm run build:gh
+
+      - name: Check out the live site (gh-pages)
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: live
+
+      - name: Replace the live site with this build
+        env:
+          BRANCH: ${{ inputs.branch }}
+        run: |
+          set -euo pipefail
+          SHA=$(git -C source rev-parse --short HEAD)
+          cd live
+          git rm -rq --ignore-unmatch .
+          cp -a ../source/dist/. .
+          git add -A
+          diff -rq --exclude=.git . ../source/dist
+          if git diff --cached --quiet; then
+            echo "Live site already matches $BRANCH@$SHA; nothing to publish."
+            echo "Live site already matches \`$BRANCH\` @ $SHA. Nothing to publish." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -qm "Deploy $BRANCH@$SHA (full replacement)"
+          git push origin HEAD:gh-pages
+          echo "Published \`$BRANCH\` @ $SHA to https://hufsa-stack.github.io/wexmoor-foundation-demo/ (live in about 1 minute, after the pages build run finishes)." >> "$GITHUB_STEP_SUMMARY"
